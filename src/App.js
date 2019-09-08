@@ -91,11 +91,13 @@ const InputRow = (props) => {
 
   return(
     <TableRow>
-    <TableCell><TextField id="standard-error" error={!IDVerified} label="ID" value={IDNum} onChange={e => setIDNum(e.target.value)} className={classes.textField} margin="normal"/></TableCell>
+
+    <TableCell><TextField id="id-form" error={!IDVerified} onKeyPress= {(e) => { if (e.key === 'Enter') { handleClick() } }} label="ID" value={IDNum} onChange={e => setIDNum(e.target.value)} className={classes.textField} margin="normal"/></TableCell>
     <TableCell></TableCell>
     <TableCell></TableCell>
     <TableCell></TableCell>
-    <TableCell align="right"><IconButton aria-label="add" onClick={() => { handleClick() } }><AddIcon fontSize="small" /></IconButton></TableCell>
+    <TableCell align="right"><IconButton aria-label="add" onClick={() => { handleClick() } } ><AddIcon fontSize="small" /></IconButton></TableCell>
+
     </TableRow>
   );
 }
